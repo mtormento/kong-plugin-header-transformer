@@ -43,9 +43,9 @@ function _M.transform_headers(conf, headers)
       if source_header ~= nil then
         local new_header_value = transformation:gsub("${.*}", source_header)
         kong.response.set_header(header_name, new_header_value)
-        ngx.log(ngx.DEBUG, "header-transformer", "header transformation applied to ", header_name, ": ", new_header_value)
+        ngx.log(ngx.DEBUG, "header-transformer", string.format("header transformation applied to '%s': %s", header_name, new_header_value))
       else
-        ngx.log(ngx.WARN, "header-transformer", "header transformation for ", header_name, " is not valid: ", transformation)
+        ngx.log(ngx.WARN, "header-transformer", string.format("header transformation for '%s' is not valid: %s", header_name, transformation))
       end
     end
   end
