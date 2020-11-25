@@ -4,7 +4,7 @@ A Kong plugin that transforms response headers.
 
 ## Description
 
-Since the offical Response transformer plugin do not allow to transform existing headers I decided to implement a plugin to do just that.
+Since the offical Response Transformer plugin does not allow the transformation of existing headers I decided to implement a plugin to do just that.
 
 ## Installation
 
