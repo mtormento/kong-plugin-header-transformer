@@ -1,10 +1,10 @@
 # Kong Header Transformer
 
-A Kong plugin that transforms request and response headers.
+A Kong plugin that transforms response headers.
 
 ## Description
 
-Since the offical Request and Response transformers plugins do not allow to modify existing headers I decided to implement a plugin to do just that.
+Since the offical Response transformer plugin do not allow to transform existing headers I decided to implement a plugin to do just that.
 
 ## Installation
 
@@ -40,14 +40,11 @@ $ luarocks install kong-plugin-header-transformer
 
 | Parameter                              | Required | Default           | Description                                                                                                                                                                                                                                                                                                                                                                              |
 | -------------------------------------- | -------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name                                   | yes      |                   | The name of the plugin to use, in this case `secure-box-decrypter`.                                                                                                                                                                                                                                                                                                                              |
-| service_id                             | semi     |                   | The id of the Service which this plugin will target.                                                                                                                                                                                                                                                                                                                                     |
-| route_id                               | semi     |                   | The id of the Route which this plugin will target.                                                                                                                                                                                                                                                                                                                                       |
-| enabled                                | no       | `true`            | Whether this plugin will be applied.                                                                                                                                                                                                                                                                                                                                                     |
-| config.securebox_url                   | yes      |                   | SecureBox service url (ex. http://sb:8000/securebox).                                                                                                                                                                                                                                                                                                                |
-| config.timeout                         | yes      | 10                | Timeout for SecureBox requests in seconds.                                                                                                                                                                                                                                                                                                                          |
-| config.keychain                        | yes      |                   | SecureBox keychain to use.
-| config.keys_to_decrypt                 | yes      |                   | Set of keys to decrypt.
+| name                                   | yes      |                   | The name of the plugin to use, in this case `header-transformer`.                                                                                                                                                                                                                                            |
+| service_id                             | semi     |                   | The id of the Service which this plugin will target.                                                                                                                                  |
+| route_id                               | semi     |                   | The id of the Route which this plugin will target.                                                                                                                                  |
+| enabled                                | no       | `true`            | Whether this plugin will be applied.                                                                                                                                 |
+| config.headers                         | yes      |                   | Array of header transformations (format is `header:transformation`, use `${source_header}` to source content from another header) |                                                                                                                                        |
 
 ## Author
 Marco Tormento
