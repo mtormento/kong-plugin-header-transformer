@@ -18,7 +18,7 @@ end
 
 
 local function validate_colon_headers(pair)
-  return validate_headers(pair, true)
+  return validate_headers(pair, false)
 end
 
 local colon_headers_array = {
