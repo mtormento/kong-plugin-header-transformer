@@ -8,7 +8,7 @@ local kong = kong
 local HeaderTransformerHandler = BasePlugin:extend{}
 
 HeaderTransformerHandler.PRIORITY = 810 -- refer to https://docs.konghq.com/1.5.x/plugin-development/custom-logic/#plugins-execution-order
-HeaderTransformerHandler.VERSION = "0.1.0"
+HeaderTransformerHandler.VERSION = "0.2.0"
 
 function HeaderTransformerHandler:new()
   HeaderTransformerHandler.super.new(self, plugin_name)
